@@ -299,6 +299,13 @@ function App() {
 
   const isAdmin = user.role === 'admin';
 
+  // Security layer: If an operator logs in, force them back to dashboard immediately
+  useEffect(() => {
+    if (user && user.role !== 'admin' && activeTab !== 'dashboard') {
+      setActiveTab('dashboard');
+    }
+  }, [user, activeTab]);
+
   return (
     <div className="app-container">
       <header className="header" style={{ alignItems: 'flex-start' }}>
@@ -339,7 +346,8 @@ function App() {
         </nav>
       )}
 
-      {activeTab === 'dashboard' && (
+      {/* Primary View: Dashboard (Always shown for operator, toggled for admin) */}
+      {(activeTab === 'dashboard' || !isAdmin) && (
         <>
           <section className="stats-grid">
             <div className="stat-card">
