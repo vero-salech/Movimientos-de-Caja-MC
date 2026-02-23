@@ -547,7 +547,7 @@ function App() {
         </>
       )}
 
-      {activeTab === 'resumen' && (
+      {isAdmin && activeTab === 'resumen' && (
         <section className="glass-card">
           <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
             <div className="stats-grid-small" style={{ marginBottom: '2rem' }}>
