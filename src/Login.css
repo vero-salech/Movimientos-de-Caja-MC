@@ -1,0 +1,127 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-primary);
+    background: radial-gradient(circle at top left, rgba(139, 195, 74, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(230, 57, 70, 0.05) 0%, transparent 40%);
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 3rem;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #e5e7eb;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-header .brand-icon {
+    margin-bottom: 1rem;
+    transform: scale(1.5);
+}
+
+.login-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.login-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-input-group .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.login-input-group .form-control {
+    padding-left: 3rem;
+    width: 100%;
+}
+
+.login-btn {
+    margin-top: 1rem;
+    padding: 0.875rem;
+    font-size: 1rem;
+}
+
+.login-error {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.login-footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 1.5rem;
+}
+
+.login-footer p {
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.demo-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #4b5563;
+}
+
+.demo-credentials code {
+    background: #f3f4f6;
+    padding: 0.35rem 0.5rem;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
