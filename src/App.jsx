@@ -291,14 +291,6 @@ function App() {
     XLSX.utils.book_append_sheet(wb, ws, `Resumen_${selectedYear}`);
     XLSX.writeFile(wb, `resumen_anual_${selectedYear}.xlsx`);
   };
-
-  // Auth Render Gate
-  if (!user) {
-    return <Login onLogin={(u) => setUser(u)} />;
-  }
-
-  const isAdmin = user.role === 'admin';
-
   // Security layer: If an operator logs in, force them back to dashboard immediately
   useEffect(() => {
     if (user && user.role !== 'admin' && activeTab !== 'dashboard') {
@@ -306,6 +298,12 @@ function App() {
     }
   }, [user, activeTab]);
 
+  // Auth Render Gate
+  if (!user) {
+    return <Login onLogin={(u) => setUser(u)} />;
+  }
+
+  const isAdmin = user.role === 'admin';
   return (
     <div className="app-container">
       <header className="header" style={{ alignItems: 'flex-start' }}>
