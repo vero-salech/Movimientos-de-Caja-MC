@@ -307,7 +307,7 @@ function App() {
           <span>Movimientos de Caja</span>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
+        <div className="user-info-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
           <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
             Conectado como: <span style={{ color: 'var(--text-primary)' }}>{user.name}</span>
             {!isAdmin && <span style={{ marginLeft: '6px', background: '#d1fae5', color: '#047857', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem' }}>Operador</span>}
@@ -472,7 +472,7 @@ function App() {
                   <span className="card-title">Últimos Movimientos</span>
                 </div>
                 {isAdmin && (
-                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                  <div className="hide-mobile" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                       <input
                         type="date"
@@ -492,8 +492,8 @@ function App() {
                         title="Fecha hasta"
                       />
                     </div>
-                    <button onClick={exportToExcelDashboard} className="btn-submit" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem', width: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', background: '#e2e8f0', color: '#111827' }} title="Descargar registros filtrados">
-                      <Download size={14} /> Exportar Excel
+                    <button onClick={exportToExcelDashboard} className="btn-submit hide-mobile" style={{ margin: 0, padding: '0.3rem 0.6rem', fontSize: '0.75rem', height: '100%', display: 'flex', alignItems: 'center', gap: '0.25rem', background: '#64748b' }} title="Descargar datos crudos en Excel">
+                      <Download size={12} /> Exportar Excel
                     </button>
                   </div>
                 )}
@@ -579,7 +579,7 @@ function App() {
                   <option key={yr} value={yr}>Año {yr}</option>
                 ))}
               </select>
-              <button onClick={exportToExcelAnnual} className="btn-submit" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem', width: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', background: '#10b981' }} title="Descargar matriz en Excel">
+              <button onClick={exportToExcelAnnual} className="btn-submit hide-mobile" style={{ padding: '0.4rem 0.8rem', fontSize: '0.8rem', width: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', background: '#10b981' }} title="Descargar matriz en Excel">
                 <Download size={14} /> Descargar Matriz
               </button>
             </div>
